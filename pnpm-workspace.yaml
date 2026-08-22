@@ -1,0 +1,8 @@
+# pnpm >= 10 refuses to run dependency install scripts unless they are approved here
+# (pnpm 11 fails the install outright). esbuild and workerd only fetch/verify their
+# platform binaries; sharp builds its native image module for Starlight's image
+# pipeline. Add new entries with `pnpm approve-builds`.
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true

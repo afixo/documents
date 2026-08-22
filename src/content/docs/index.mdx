@@ -1,0 +1,45 @@
+---
+title: Afixo
+description: Context-specific personas, purpose-aware disclosure at the API boundary.
+template: splash
+hero:
+  title: Afixo
+  tagline: Context-specific personas, purpose-aware disclosure at the API boundary.
+  actions:
+    - text: Get started
+      link: /getting-started/
+      icon: right-arrow
+    - text: API reference
+      link: /api/overview/
+      icon: open-book
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Integrate" icon="rocket">
+		Register an API client, exchange its credentials for a bearer token and call
+		`GET /v1/disclose/{handle}?purpose=…`. One endpoint, one decision, always audited.
+		[Quickstart →](/getting-started/)
+	</Card>
+	<Card title="Dashboard" icon="laptop">
+		Subjects sign in at afixo.io to author personas, register API clients, write
+		disclosure rules with a live preview, and read the audit log.
+		[Dashboard guide →](/dashboard/personas/)
+	</Card>
+	<Card title="How it works" icon="puzzle">
+		Given *(subject, requester, purpose)* the engine selects the most specific rule,
+		resolves its persona, applies the sensitivity ceiling and the allow-list, denies
+		by default and records the decision before answering.
+		[The decision algorithm →](/concepts/decision-algorithm/)
+	</Card>
+</CardGrid>
+
+## Where things stand
+
+Afixo is the second version of a university final project, rebuilt as Rust services
+behind Cloudflare Workers. As of 2026-08-22 the policy service, the gateway and the
+decision engine are complete; authentication, identity, disclosure and audit
+persistence are skeletons. Pages that describe unfinished behaviour say so.
+See [the report](/reference/report/) for what changed between the versions.

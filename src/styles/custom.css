@@ -1,0 +1,16 @@
+/*
+ * Afixo accent: a restrained teal. Only the accent scale is overridden; Starlight's
+ * grays, typography and layout are untouched. Dark values first (Starlight's default
+ * theme), light values under [data-theme='light'].
+ */
+:root {
+	--sl-color-accent-low: #0b3e3a;
+	--sl-color-accent: #139c8f;
+	--sl-color-accent-high: #a3ebe2;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #d2f3ee;
+	--sl-color-accent: #0e7c71;
+	--sl-color-accent-high: #0a3f3a;
+}

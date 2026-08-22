@@ -1,0 +1,24 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "afixo-docs",
+	"compatibility_date": "2026-08-22",
+
+	// Assets only: there is no `main`, no code runs at the edge, no bindings exist.
+	// `auto-trailing-slash` matches Starlight's output (dist/<slug>/index.html) and
+	// Astro's `trailingSlash: 'always'`: /concepts/personas → 308 → /concepts/personas/.
+	// Starlight's own 404 page (dist/404.html) answers unknown paths.
+	"assets": {
+		"directory": "./dist",
+		"html_handling": "auto-trailing-slash",
+		"not_found_handling": "404-page"
+	},
+
+	// The site is served on its custom domain only — no workers.dev or preview hostnames.
+	"workers_dev": false,
+	"preview_urls": false,
+	"routes": [{ "pattern": "docs.afixo.io", "custom_domain": true }],
+
+	"observability": {
+		"enabled": true
+	}
+}

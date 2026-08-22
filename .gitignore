@@ -1,0 +1,27 @@
+# build output
+dist/
+dist-dry/
+
+# generated types
+.astro/
+worker-configuration.d.ts
+
+# dependencies
+node_modules/
+
+# wrangler state
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# environment variables
+.env
+.env.*
+
+# logs
+*.log
+
+# editors / OS
+.DS_Store
+.idea/
+.vscode/
