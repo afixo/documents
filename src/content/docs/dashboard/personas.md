@@ -29,7 +29,3 @@ that point at it are not deleted: they keep matching but disclose nothing, becau
 missing persona is a deny. Delete or rewrite them on the [Policies](/dashboard/policies/)
 page, where they are marked *missing persona*.
 
-:::caution[Status: skeleton (2026-08-22)]
-This panel calls the `identity` service, which is a skeleton; requests currently
-answer `501 not_implemented`.
-:::

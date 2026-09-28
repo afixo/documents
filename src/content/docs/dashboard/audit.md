@@ -30,7 +30,3 @@ every hash and compare (`GET /v1/audit/verify`). The answer is *Chain intact (n
 entries)* or *Chain broken at* the first sequence number whose hash does not match.
 What the chain commits to is described in [Audit log & hash chain](/concepts/audit-log/).
 
-:::caution[Status: skeleton (2026-08-22)]
-This panel calls the `audit` service, whose read and verify RPCs are skeletons;
-requests currently answer `501 not_implemented`.
-:::

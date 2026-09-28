@@ -60,8 +60,3 @@ the chain makes detectable after the fact.
 Verification is O(n) — fine at this scale; a per-subject Merkle index is the obvious
 next step if it is not. The dashboard's [Audit](/dashboard/audit/) panel exposes both.
 
-:::caution[Status: skeleton (2026-08-22)]
-The chain hashing is implemented and the migrations exist, but the `audit` service's
-`Record`, read and verify RPCs still answer `UNIMPLEMENTED` — `501 not_implemented` at
-the gateway.
-:::

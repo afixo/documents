@@ -25,6 +25,12 @@ nobody has to infer the gaps.
 
 ## Open follow-ups
 
+- No integration tests for `gateway` (REST ↔ gRPC mapping) or `policy`; the engine,
+  `common`, `auth`, `identity`, `disclosure` and `audit` are the tested crates.
+- No load or latency measurements of the disclosure path (Criterion, or a run against
+  `api.afixo.io`).
+- No backend staging environment: the edge Workers carry a staging configuration, but
+  the cluster runs one production namespace and a push to `master` deploys it.
 - No mTLS or service mesh between pods; the gateway → services hop relies on the
   private network and a NetworkPolicy.
 - The Access JWT (`Cf-Access-Jwt-Assertion`) is not yet validated at the gateway as
@@ -36,10 +42,12 @@ nobody has to infer the gaps.
   Access email-login bounce; `Lax` on the session cookie is the usual remedy, to be
   tested rather than assumed.
 
-## Not yet built (2026-08-22)
+## Shipped since this page was first written
 
-- `auth`, `identity`, `disclosure` and the `audit` RPCs are skeletons answering
-  `UNIMPLEMENTED` (`501 not_implemented`). The contract, the migrations for all four
-  databases, the chain hashing, the engine, the policy service and the gateway are done.
-- Cloud resources still to create: the container registry, the managed PostgreSQL
-  cluster, the tunnels and Access applications, and the GitHub OAuth apps.
+- **2026-08-22** — `auth`, `identity`, `disclosure` and the `audit` RPCs left skeleton
+  status: GitHub sign-in with rotating refresh tokens, requesters and client-credential
+  tokens, personas and fields, real disclosure decisions with the synchronous
+  `audit.Record`, and `GET /v1/audit/verify`.
+- **2026-08-23** — the Kubernetes cluster, in-cluster PostgreSQL, the tunnel and Access
+  applications, the GitHub OAuth app and the Workers are in production at `afixo.io`,
+  `api.afixo.io`, `docs.afixo.io` and `mcp.afixo.io`.

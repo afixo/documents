@@ -39,7 +39,9 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ## Where things stand
 
 Afixo is the second version of a university final project, rebuilt as Rust services
-behind Cloudflare Workers. As of 2026-08-22 the policy service, the gateway and the
-decision engine are complete; authentication, identity, disclosure and audit
-persistence are skeletons. Pages that describe unfinished behaviour say so.
-See [the report](/reference/report/) for what changed between the versions.
+behind Cloudflare Workers. All six services — the gateway, `auth`, `identity`, `policy`,
+`disclosure` and `audit` — are implemented and deployed; sign-in, client credentials,
+disclosure decisions and the hash-chained audit log work end to end. What is deliberately
+left out is listed on [What is deliberately not done](/architecture/not-done/); see
+[the report](/reference/report/) for what changed between the versions and the
+[changelog](/reference/changelog/) for when.

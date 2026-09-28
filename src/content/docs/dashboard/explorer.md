@@ -38,7 +38,3 @@ same-origin `/api/v1`. It talks to `api.afixo.io` across origins; the gateway's 
 listener answers CORS for `https://afixo.io` for exactly this purpose. Your browser is
 the requester here — the session cookie plays no part.
 
-:::caution[Status: skeleton (2026-08-22)]
-`POST /oauth/token` and `GET /v1/disclose/…` reach the `auth` and `disclosure`
-services, which are skeletons; every card currently shows `HTTP 501`.
-:::

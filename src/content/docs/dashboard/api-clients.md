@@ -35,7 +35,3 @@ A client registered here is used exactly as in [Getting started](/getting-starte
 `POST /oauth/token`, then `GET /v1/disclose/…`. Nothing is disclosed to it until a
 subject writes a [rule](/dashboard/policies/) that names it, or a purpose it declares.
 
-:::caution[Status: skeleton (2026-08-22)]
-This panel calls the `auth` service, which is a skeleton; requests currently answer
-`501 not_implemented`.
-:::

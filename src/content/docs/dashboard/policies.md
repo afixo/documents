@@ -41,5 +41,6 @@ unless another rule covers them.
 
 The engine's ranking and filtering are described in
 [The decision algorithm](/concepts/decision-algorithm/). The `policy` service behind
-this panel is complete; creating a rule also validates the persona and requester ids
-against `identity` and `auth`, which are still skeletons.
+this panel validates the persona and requester ids against `identity` and `auth` when a
+rule is created, so an invalid rule is never stored; at read time a dangling reference is
+a deny, never an error.

@@ -3,19 +3,11 @@ title: Getting started
 description: Register an API client, obtain a token and make your first disclosure request.
 ---
 
-import { Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
 Afixo answers one question for an API client: *which version of this person may I
 see, for this stated reason?* This page takes an integrator from zero to a
 disclosure decision.
-
-<Aside type="caution" title="Status: skeleton (2026-08-22)">
-	The `auth`, `identity`, `disclosure` and `audit` services are skeletons that answer
-	`501 not_implemented`; `policy`, the gateway and the decision engine are complete.
-	Today `GET /v1/health` and `GET /v1/purposes` work end to end. Sign-in,
-	`POST /oauth/token` and `GET /v1/disclose/…` follow the contract below but do not
-	yet return real decisions.
-</Aside>
 
 <Steps>
 

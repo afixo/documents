@@ -3,18 +3,12 @@ title: Machine API
 description: The requester surface at api.afixo.io — token, disclose, purposes and health.
 ---
 
-import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 Base URL **`https://api.afixo.io`**. Exactly four routes exist on this host, plus
 `OPTIONS` preflights on them. Everything else — the whole console surface and
 `/api/*` included — is `404 {"error":"not_found"}` from the edge Worker, before the
 request reaches the cluster.
-
-<Aside type="caution" title="Status: skeleton (2026-08-22)">
-	`GET /v1/health` and `GET /v1/purposes` work end to end. `POST /oauth/token` and
-	`GET /v1/disclose/…` are routed by the gateway to the `auth` and `disclosure`
-	services, which are skeletons answering `501 not_implemented`.
-</Aside>
 
 ## `GET /v1/health`
 
